@@ -12,6 +12,7 @@ const  featchuser=(req,res,next)=>{
     
     const data=jwt.verify(token,JWT_SECRET);
     req.user= data.user;
+    console.log( req.user)
     next()
 
     } catch (error) {

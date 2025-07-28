@@ -1,12 +1,17 @@
-import mongoose, { model } from 'mongoose';
+const mongoose = require('mongoose');
+const User = require('./User');
 const { Schema } = mongoose;
 
 const NotesSchema = new Schema({
+  user :{
+    type:mongoose.Schema.Types.ObjectId,
+    ref : 'user'
+  },
   title:{
     type:String,
     required:true
   },
-  discription:{
+  description:{
     type:String,
     required:true,
   },
